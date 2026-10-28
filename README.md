@@ -10,9 +10,46 @@
 [![QA Gate: Closed-Loop Defects](https://img.shields.io/badge/QA%20Gate%205-5%2F5%20Defects%20Closed-brightgreen.svg)](reports/qa-test-report.md)
 [![Security Audit](https://img.shields.io/badge/Security-SAFE%20TO%20COMMIT-success.svg)](reports/security-audit.md)
 
-An edge-deployable, high-speed automated computer vision inspection and Vector-RAG telemetry platform for discrete industrial manufacturing lines (milled aluminum, stamped steel, titanium alloys, cast iron).
+## 📌 Overview: What is this Platform?
 
-The platform couples sub-millisecond **Grain-Neutral Intensity Cancellation** and a **21-Dimensional Geometric/Texture Descriptor Engine** with an in-memory **TF-IDF Vector Retrieval-Augmented Generation (RAG)** pipeline to instantly synthesize OSHA-compliant Lockout/Tagout maintenance work orders upon flaw detection.
+The **Edge Industrial Vision Inspection & Vector-RAG Platform** is an intelligent, high-speed visual quality control and automated maintenance system designed for modern manufacturing assembly lines (including milled aluminum, stamped steel, titanium alloys, and cast iron parts).
+
+In typical factories, quality inspectors and plant operators face two major challenges:
+1. **False Alarms from Surface Texture:** Harmless brushed metal grain and machining striations frequently trick standard vision software into flagging non-existent defects.
+2. **Slow, Manual Maintenance Lookups:** When a real flaw *is* detected, production lines often stall while operators manually search through hundreds of pages of paper binders to find the right repair steps, safety protocols, and machine lockout rules.
+
+This platform bridges that gap in real time by connecting **Automated AI Flaw Detection** directly to **Instant RAG-Powered Maintenance Action**:
+
+```mermaid
+flowchart LR
+    A["📷 1. High-Speed Camera<br>Captures Metal Surface"] --> B["🔍 2. AI Flaw Detection<br>Filters Grain & Rates Severity"]
+    B --> C["🧠 3. Vector-RAG Engine<br>Retrieves Safety Manuals"]
+    C --> D["📋 4. Actionable Work Order<br>OSHA Lockout/Tagout Directives"]
+```
+
+---
+
+## 🧠 How Retrieval-Augmented Generation (RAG) is Used
+
+While conventional inspection systems only flash an unhelpful **"FAIL"** light on the screen, this platform embeds an **In-Memory Vector-RAG (Retrieval-Augmented Generation)** engine that immediately tells the operator *what to do, how to stay safe, and how to fix the issue*:
+
+* **1. Knowledge Base of Plant Manuals:**  
+  The system indexes a library of plant-certified Standard Operating Procedures (SOPs) directly in memory, covering:
+  * `SOP-000`: General Surface Quality, Visual Inspection Standards & ISO Tolerances
+  * `SOP-001`: Structural Crack Remediation, Thermal Stress Relief & Ultrasonic NDT
+  * `SOP-002`: Chemical Corrosion Neutralization, Acid Passivation & Seal Replacement
+  * `SOP-003`: Dimensional Notch, Edge Chip Tooling Alignment & Die Inspection
+  * `SOP-004`: Cosmetic Scratch Buffing, Polishing & Abrasive Finishing Protocols
+
+* **2. Semantic Vector Similarity Retrieval:**  
+  The moment a defect is identified (e.g., a *Structural Crack* with *Critical Severity*), the RAG engine queries the SOP knowledge base using vector similarity matching. It extracts the exact safety clauses and repair protocols relevant to that flaw in milliseconds, completely offline without requiring cloud API connections.
+
+* **3. Automated Work Order Synthesis:**  
+  The RAG pipeline automatically generates an official, pre-filled Maintenance Work Order (`WO-M<frame>-<DEFECT>`) containing:
+  * **OSHA 29 CFR 1910.147 Lockout/Tagout (LOTO):** Clear mandatory directives on which electrical and hydraulic breakers to isolate before approaching the conveyor.
+  * **Mandatory PPE Gear:** Specific protective equipment requirements (e.g., Level 3 cut-resistant gloves, face shields, thermal protection).
+  * **Step-by-Step Resolution Guide:** Actionable repair and recalibration steps for millwrights and maintenance technicians.
+  * **Audit Telemetry:** Monotonically tracked timestamps, continuous flaw severity score ($0.0$ to $10.0$), confidence level, and affected surface area.
 
 ---
 
@@ -85,8 +122,8 @@ flowchart TD
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/pankajatd/industrial_sdlc_vision_rag.git
-   cd industrial_sdlc_vision_rag
+   git clone https://github.com/pankajatd/Industrial_Vision_Rag_with_7SDLC_MultiAgents.git
+   cd Industrial_Vision_Rag_with_7SDLC_MultiAgents
    ```
 
 2. **Create and activate a virtual environment:**
